@@ -72,3 +72,5 @@ group :test do
 end
 
 # custom
+
+gem "devise", "~> 4.9"

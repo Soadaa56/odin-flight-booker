@@ -7,3 +7,49 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Airport.destroy_all
+p "Resetting Airports..."
+
+Airport.create!([{
+  name: "New York City",
+  code: "JFK"
+},
+{
+  name: "Atlanta",
+  code: "ATL"
+},
+{
+  name: "Denver",
+  code: "DEN"
+},
+{
+  name: "Los Angeles",
+  code: "LAX"
+},
+{
+  name: "Miami",
+  code: "MIA"
+},
+{
+  name: "San Francisco",
+  code: "SFO"
+},
+{
+  name: "Dallas",
+  code: "DFW"
+},
+{
+  name: "Las Vegas",
+  code: "LAS"
+},
+{
+  name: "Seattle",
+  code: "SEA"
+},
+{
+  name: "Phoenix",
+  code: "PHX"
+}
+])
+
+p "Created #{Airport.count} airports."
