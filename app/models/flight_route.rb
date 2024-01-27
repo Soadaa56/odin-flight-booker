@@ -1,4 +1,4 @@
 class FlightRoute < ApplicationRecord
-  belongs_to :departure_airport
-  belongs_to :arrival_airport
+  belongs_to :flight
+  belongs_to :airport
 end
