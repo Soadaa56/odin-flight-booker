@@ -40,9 +40,7 @@ puts "Created #{Airport.count} airports."
 
   flight = Flight.create!(
     departure_airport: departure_airport,
-    arrival_airport: arrival_airport,
-    departure_time: departure_time,
-    arrival_time: arrival_time
+    arrival_airport: arrival_airport
   )
 
   FlightRoute.create!(
