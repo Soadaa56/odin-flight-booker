@@ -9,9 +9,9 @@
 #   end
 require 'faker'
 
+FlightRoute.destroy_all
 Airport.destroy_all
 Flight.destroy_all
-FlightRoute.destroy_all
 
 puts "Resetting Database..."
 
