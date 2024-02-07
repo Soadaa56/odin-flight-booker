@@ -31,9 +31,21 @@ Airport.create!([
 
 puts "Created #{Airport.count} airports."
 
+# Help from chatGPT to learn some seeding ideas
 100.times do
-  Flight.create!
-  
+  departure_airport = Airport.all.sample
+  arrival_airport = (Airport.all - [departure_airport]).sample
+  departure_time = Faker::Time.forward(days: 30)
+  arrival_time = departure_time + rand(4..8).hours
+
+  flight = Flight.create!
+
+  FlightRoute.create!(
+    flight: flight,
+    departure_airport: departure_airport,
+    arrival_airport: arrival_airport,
+    departure_time: departure_time
+  )
 end
 
 puts "Created #{Flight.count} flights and #{FlightRoute.count} routes."
