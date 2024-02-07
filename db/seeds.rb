@@ -32,18 +32,8 @@ Airport.create!([
 puts "Created #{Airport.count} airports."
 
 100.times do
-  departure_airport = Airport.all.sample
-  arrival_airport = (Airport.all - [departure_airport]).sample
-  departure_time = Faker::Time.forward(days: 30) # Generate a random departure time within the next month
-  arrival_time = departure_time + rand(1..8).hours # Generate a random arrival time
-
-  flight = Flight.create!
-
-  FlightRoute.create!(
-    flight: flight,
-    departure_airport: departure_airport,
-    arrival_airport: arrival_airport
-  )
+  Flight.create!
+  
 end
 
 puts "Created #{Flight.count} flights and #{FlightRoute.count} routes."
