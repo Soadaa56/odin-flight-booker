@@ -3,7 +3,13 @@ class FlightsController < ApplicationController
 
   # GET /flights or /flights.json
   def index
-    @flights = Flight.all
+    @airports = Airport.allocate
+    
+    if params[:query].present?
+      @flights = Flight.search_by_departure_airport(params[:query]) + Flight.search_by_arrival_airport(params[:query])
+    else
+      @flights = Flight.all
+    end
   end
 
   # GET /flights/1 or /flights/1.json
