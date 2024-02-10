@@ -1,11 +1,17 @@
 <p style="color: green"><%= notice %></p>
-
+<p>
+  <%= link_to "Home", root_path %>
+</p>
 <h1>Flights</h1>
 
-<%= form_with url: flights_path, method: :get do |form| %>
-  <%= form.label :query, "Search for:" %>
-  <%= form.text_field :query %>
-  <%= form.submit "Search" %>
+<%= form_with url: flights_path, method: :get do |f| %>
+  <%= f.label :departure_airport_id, "Departing Airport:" %>
+  <%= select_tag :departure_airport_id, options_from_collection_for_select(@airports, :id, :name, params[:departure_airport_id]), include_blank: true %>
+  
+  <%= f.label :arrival_airport_id, "Arrival Airport:" %>
+  <%= select_tag :arrival_airport_id, options_from_collection_for_select(@airports, :id, :name, params[:arrival_airport_id]), include_blank: true %>
+  
+  <%= submit_tag "Search" %>
 <% end %>
 
 
