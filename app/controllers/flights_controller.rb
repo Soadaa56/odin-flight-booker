@@ -4,10 +4,7 @@ class FlightsController < ApplicationController
   # GET /flights or /flights.json
   def index
     @airports = Airport.all
-    @flights = Flight.search(params[:query])
-
-    puts "Index params below"
-    puts params.inspect
+    @flights = Flight.all
   end
 
   # GET /flights/1 or /flights/1.json
