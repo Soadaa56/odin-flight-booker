@@ -4,7 +4,7 @@
 </p>
 <h1>Flights</h1>
 
-<%= form_with url: flights_path, method: :get do |f| %>
+<%= form_with url: flight_routes_path, method: :get do |f| %>
   <%= f.label :departure_airport_id, "Departing Airport:" %>
   <%= select_tag :departure_airport_id, options_from_collection_for_select(@airports, :id, :name, params[:departure_airport_id]), include_blank: true %>
   
